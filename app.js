@@ -2,26 +2,27 @@ var lyrics = require('./lyrics');
 
 var express = require('express');
 var app = express();
-// var http = require('http');
-// var newLyric = new lyrics();
-// var new Lyric = new lyrics.Lyrics();
 
-// respond with Hello World
+app.use(express.static(__dirname + '/public'));
+
+// var http = require('http');
+
+// // respond with Hello World
 app.get('/', function (request, response) {
 	var selection = Math.floor(Math.random()*lyrics.length);
 	response.send(lyrics[selection]);
 });
 
-apiRouter.get('/lyrics',function(req, res) {
-        // return lyrics
-       res.send(lyrics);
-    
-});
+app.get('/api/lyrics', function (req, res) {
+	var selection = Math.floor(Math.random()*lyrics.length);
+	res.send(lyrics[selection]);
 
-// accept POST 
-app.post('/lyrics', function (req, res) {
-	res.send('Got a POST request');
+	//res.send('Hello World');
 });
+// accept POST 
+// app.post('/lyrics', function (req, res) {
+// 	res.send('Got a POST request');
+// });
 
 var server = app.listen(3000, function () {
 	var host = server.address().address;
