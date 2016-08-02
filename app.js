@@ -12,10 +12,16 @@ app.get('/', function (request, response) {
 	response.send(lyrics[selection]);
 });
 
-// accept POST request on the homepage
-// app.post('/', function (req, res) {
-// 	res.send('Got a POST request');
-// });
+apiRouter.get('/lyrics',function(req, res) {
+        // return lyrics
+       res.send(lyrics);
+    
+});
+
+// accept POST 
+app.post('/lyrics', function (req, res) {
+	res.send('Got a POST request');
+});
 
 var server = app.listen(3000, function () {
 	var host = server.address().address;
@@ -23,16 +29,7 @@ var server = app.listen(3000, function () {
 
 	console.log('Example app listening at http://%s:%s', host, port);
 });
-// selecting a random quote from the collection
-
-// 	http.createServer(function(request, response){
-// 	// var selection = Math.floor(Math.random()*lyrics.length);
-// 	// var selection = lyrics.random();
-
-
 // 	response.writeHead(200, {'Content-type':'text/plain'});
 // 	response.write(lyrics);
 // 	response.end();
 // }).listen(8888);
-
-// 	console.log(lyrics);

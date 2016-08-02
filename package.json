@@ -1,0 +1,26 @@
+{
+  "name": "lab21-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krenabeth/lab21-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krenabeth/lab21-express/issues"
+  },
+  "homepage": "https://github.com/krenabeth/lab21-express#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
